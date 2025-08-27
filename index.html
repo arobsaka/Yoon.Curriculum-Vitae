@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My CV</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+    .viewer {
+      position: fixed;
+      inset: 0;
+      border: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .fallback {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      padding: 2rem;
+    }
+    .fallback a { text-decoration: none; }
+  </style>
+</head>
+<body>
+  <!-- Primary: object tag for best PDF handling -->
+  <object data="cv.pdf#view=FitH" type="application/pdf" class="viewer">
+    <!-- Fallback: iframe -->
+    <iframe src="cv.pdf" class="viewer"></iframe>
+    <!-- Fallback text (very old browsers) -->
+    <div class="fallback">
+      <h1>Unable to display PDF inline</h1>
+      <p>Your browser couldn't display the PDF. You can download it directly:</p>
+      <p><a href="cv.pdf" download>Download CV (PDF)</a></p>
+    </div>
+  </object>
+</body>
+</html>
